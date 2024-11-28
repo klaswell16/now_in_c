@@ -1,5 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
+
+int main();
 
 int hexToInt(char hex){
     int num;
@@ -52,8 +55,7 @@ int hexToInt(char hex){
         break;
     default:
         printf("Wrong input\n");
-
-        break;
+        main();
     }
 
     return num;
@@ -71,11 +73,11 @@ void intToBinary(int converted){
 int main(){
     char hex;
     while (1){
-        printf("Enter a number in hexadecimal between 0-E: \n");
+        printf("Enter a hexadecimal between 0-E or X to exit: \n");
         scanf(" %c", &hex);
         if(hex == 'X'){
             printf("Exiting program...\n");
-            break;
+            exit(EXIT_SUCCESS);
         }
         int converted = hexToInt(hex);
         intToBinary(converted);
