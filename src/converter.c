@@ -59,13 +59,14 @@ int hexToInt(char hex){
 }
 int main(){
     char hex;
-
-
-    printf("Enter a number in hexadecimal between 0-E: \n");
-    scanf("%c", &hex);
-    int converted = hexToInt(hex);
-    printf("Converted integer: %d\n", converted);
-
-
+    while (1){
+        printf("Enter a number in hexadecimal between 0-E: \n");
+        scanf(" %c", &hex);
+        if(hex == 'x'){
+            break;
+        }
+        int converted = hexToInt(hex);
+        printf("Converted integer: %d\n", converted);
+    }
     return 0;
 }
