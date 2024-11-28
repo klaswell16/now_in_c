@@ -60,12 +60,12 @@ int hexToInt(char hex){
 int main(){
     char hex;
 
-    while (hex != 'x'){
-        printf("Enter a number in hexadecimal between 0-E: \n");
-        scanf("%c", &hex);
-        int converted = hexToInt(hex);
-        printf("Converted integer: %d\n", converted);
-    }
+
+    printf("Enter a number in hexadecimal between 0-E: \n");
+    scanf("%c", &hex);
+    int converted = hexToInt(hex);
+    printf("Converted integer: %d\n", converted);
+
 
     return 0;
 }
