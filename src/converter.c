@@ -52,21 +52,34 @@ int hexToInt(char hex){
         break;
     default:
         printf("Wrong input\n");
+
         break;
     }
 
     return num;
 }
+
+void intToBinary(int converted){
+    int i;
+    for(i = 3; i >= 0; i--){
+        int bit = (converted >> i) & 1;
+        printf("%d", bit);
+    }
+    printf("\n");
+}
+
 int main(){
     char hex;
     while (1){
         printf("Enter a number in hexadecimal between 0-E: \n");
         scanf(" %c", &hex);
-        if(hex == 'x'){
+        if(hex == 'X'){
+            printf("Exiting program...\n");
             break;
         }
         int converted = hexToInt(hex);
-        printf("Converted integer: %d\n", converted);
+        intToBinary(converted);
+
     }
     return 0;
 }
